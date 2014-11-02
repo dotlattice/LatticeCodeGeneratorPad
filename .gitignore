@@ -131,6 +131,7 @@ publish/
 *.publishproj
 
 # NuGet Packages
+.nuget/NuGet.exe
 *.nupkg
 # The packages folder can be ignored because of Package Restore
 **/packages/*
@@ -181,3 +182,8 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Mercurial
+.hg/
+.hgignore
+*.orig

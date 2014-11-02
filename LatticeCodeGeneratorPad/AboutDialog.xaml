@@ -1,0 +1,53 @@
+﻿<Window x:Class="LatticeCodeGeneratorPad.AboutDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="About" Height="300" Width="500">
+    <StackPanel HorizontalAlignment="Left">
+        <Image Source="Images\logo.ico" Width="64" Height="64"></Image>
+        <StackPanel>
+            <FlowDocumentReader>
+                <FlowDocument FontSize="12">
+                    <List TextAlignment="Left" MarkerStyle="None" Padding="10,0,0,0">
+                        <ListItem>
+                            <Paragraph>Lattice Code Generator Pad</Paragraph>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph>
+                                Version:
+                                <Run Text="{Binding VersionString, Mode=OneWay}" />
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                    
+                    <Paragraph Padding="10,0,0,0">
+                        Icons are from
+                        <Hyperlink NavigateUri="http://fontawesome.io" RequestNavigate="FontAwesomeHyperlinkClicked">Font Awesome</Hyperlink>
+                    </Paragraph>
+
+                    <List TextAlignment="Left" MarkerStyle="None" Padding="10,0,0,0">
+                        <ListItem>
+                            <Paragraph>
+                                Config File:
+                                <Run Text="{Binding ConfigFilePath, Mode=OneWay}" />
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph>
+                                User Config File:
+                                <Run Text="{Binding UserConfigFilePath, Mode=OneWay}" />
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                    
+                    <Paragraph TextAlignment="Left" FontSize="12">
+                    </Paragraph>
+                </FlowDocument>
+            </FlowDocumentReader>
+
+
+            <DockPanel>
+                <Button Content="OK" />
+            </DockPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>
