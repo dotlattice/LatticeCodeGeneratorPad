@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1B5344C4-332C-4F23-85B1-16EA1E2FBFA3}</ProjectGuid>
+    <ProjectGuid>{72660C82-DC56-4406-890D-B11DB1169DC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LatticeCodeGenerator</RootNamespace>
-    <AssemblyName>LatticeCodeGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>LatticeObjectTree.CodeGenerators</RootNamespace>
+    <AssemblyName>LatticeObjectTree.CodeGenerators</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\LatticeCodeGenerator.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\LatticeObjectTree.CodeGenerators.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,51 +32,23 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\LatticeCodeGenerator.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\LatticeObjectTree.CodeGenerators.XML</DocumentationFile>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="CSharpObjectCodeGenerator.cs" />
+    <Compile Include="CSharpObjectCodeGeneratorOptions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="LatticeObjectTree, Version=0.9.3.5, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\LatticeObjectTree.0.9.3.5\lib\net40-Client\LatticeObjectTree.dll</HintPath>
     </Reference>
-    <Reference Include="Roslyn.Compilers">
-      <HintPath>..\packages\Roslyn.Compilers.Common.1.2.20906.2\lib\net45\Roslyn.Compilers.dll</HintPath>
-    </Reference>
-    <Reference Include="Roslyn.Compilers.CSharp">
-      <HintPath>..\packages\Roslyn.Compilers.CSharp.1.2.20906.2\lib\net45\Roslyn.Compilers.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Roslyn.Services">
-      <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Services.dll</HintPath>
-    </Reference>
-    <Reference Include="Roslyn.Services.CSharp">
-      <HintPath>..\packages\Roslyn.Services.CSharp.1.2.20906.2\lib\net45\Roslyn.Services.CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Roslyn.Utilities">
-      <HintPath>..\packages\Roslyn.Services.Common.1.2.20906.2\lib\net45\Roslyn.Utilities.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeGenerationResult.cs" />
-    <Compile Include="ObjectTreeCSharpCodeGenerator.cs" />
-    <Compile Include="CodeExecution\CodeExecutionSession.cs" />
-    <Compile Include="CodeExecution\CSharpCodeExecutor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Runtime\Console.cs" />
-    <Compile Include="Runtime\ObjectExtensions.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="LatticeObjectTree.CodeGenerators.nuspec" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\LatticeCodeGenerator.Contract\LatticeCodeGenerator.Contract.csproj">
-      <Project>{dc0ed4e1-dd03-49f1-a12a-b38c1191ee3b}</Project>
-      <Name>LatticeCodeGenerator.Contract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LatticeObjectTree.CodeGenerators\LatticeObjectTree.CodeGenerators.csproj">
-      <Project>{72660c82-dc56-4406-890d-b11db1169dc2}</Project>
-      <Name>LatticeObjectTree.CodeGenerators</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

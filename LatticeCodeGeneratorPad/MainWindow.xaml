@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         ResizeMode="CanResizeWithGrip"
-        Title="ObjectTree Code Generator" Height="450" Width="525"
+        Title="Lattice Code Generator Pad" Height="450" Width="525"
         Icon="Images\logo.ico"
         Closing="WindowClosing">
     <FrameworkElement.CommandBindings>

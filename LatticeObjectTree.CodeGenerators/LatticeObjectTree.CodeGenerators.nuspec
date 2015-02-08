@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>LatticeObjectTree.CodeGenerators</id>
+    <version>$version$</version>
+    <title>LatticeObjectTree.CodeGenerators</title>
+    <authors>dotlattice</authors>
+    <projectUrl>https://github.com/dotlattice/LatticeCodeGeneratorPad</projectUrl>
+    <licenseUrl>https://github.com/dotlattice/LatticeCodeGeneratorPad/LatticeObjectTree.CodeGenerators/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generates source code from an object tree.</description>
+  </metadata>
+</package>
