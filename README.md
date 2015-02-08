@@ -27,7 +27,7 @@ Which will give us basically what we passed in as a string:
 ```c#
 @"new Person()
 {
-    Name = "Apollo",
+    Name = ""Apollo"",
 }"
 ```
 
